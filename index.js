@@ -1,3 +1,5 @@
+// Pick up here: https://pomb.us/build-your-own-react/#step-iii-concurrent-mode
+
 // Using rest here forces an array
 function createElement(type, props, ...children) {
   return {
@@ -30,9 +32,9 @@ function render(element, container) {
       ? document.createTextNode("")
       : document.createElement(element.type);
 
-  const isPropertyNotChildren = key => key !== "children";
+  const isProperty = key => key !== "children";
   Object.keys(element.props)
-    .filter(isPropertyNotChildren)
+    .filter(isProperty) // is property not children
     .forEach(name => {
       dom[name] = element.props[name];
     });
