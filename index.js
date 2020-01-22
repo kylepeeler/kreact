@@ -19,3 +19,16 @@ text["nodeValue"] = element.props.children // Similar to line 14
 
 node.appendChild(text)
 container.appendChild(node)
+
+/* 
+Equivalent to:
+
+const element = (
+  <h1 id="foo">
+     Hello 
+  </div>
+);
+
+const container = document.getElementById("root");
+ReactDOM.render(element, container);
+*/
