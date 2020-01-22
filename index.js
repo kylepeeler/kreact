@@ -1,31 +1,20 @@
-// React.createElement converts JSX -> JSON, simplified output:
-const element = {
-  type: "h1",
-  props: {
-    title: "foo",
-    children: "Hello",
-  },
-};
+const element = (
+  <div id="foo">
+    <a>bar</a>
+    <b />
+  </div>
+);
 
-// ReactDOM.render(element, container);
 const container = document.getElementById("root");
-
-const node = document.createElement(element.type)
-node["title"] = element.props.title
-
-// Using textNode instead of innerText will allow us to treat all elements the same way later
-const text = document.createTextNode("")
-text["nodeValue"] = element.props.children // Similar to line 14
-
-node.appendChild(text)
-container.appendChild(node)
+ReactDOM.render(element, container);
 
 /* 
 Equivalent to:
 
 const element = (
-  <h1 id="foo">
-     Hello 
+  <div id="foo">
+     <a>bar</a>
+     <b />
   </div>
 );
 
