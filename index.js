@@ -1,3 +1,9 @@
+// Features to implement:
+// - [ ] use an object for the style prop
+// - [ ] flatten children arrays
+// - [ ] useEffect hook
+// - [ ] reconciliation by key
+
 // Using rest here forces an array
 function createElement(type, props, ...children) {
   return {
